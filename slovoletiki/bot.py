@@ -16,14 +16,14 @@ text_queue = {}
 bot = telebot.TeleBot('2126267694:AAGLg0fY8kw4oFYt5T0vSWKeM39MtV6kYV8')
 a = ['а', 'е', 'ё', 'и', 'о', 'у', 'э', 'ю', 'я', 'ы', 'і', 'ї', 'є']
 b = ['б', 'в', 'г', 'д', 'ж', 'з', 'к', 'л', 'м', 'н', 'п', 'р', 'с', 'т', 'ф', 'х', 'ц', 'ч', 'ш', 'щ', 'й', 'ґ']
-s_drop = Image.open('звезда.png')
+s_drop = Image.open('slovoletiki/звезда.png')
 s_drop = s_drop.resize((62, 97))
-b_drop = Image.open('звезда.png')
+b_drop = Image.open('slovoletiki/звезда.png')
 b_drop = b_drop.resize((126, 195))
-boat_1 = Image.open('самолет1.png')
-boat_2 = Image.open('самолет2.png')
-boat_3 = Image.open('самолет3.png')
-boat_4 = Image.open('самолет4.png')
+boat_1 = Image.open('slovoletiki/самолет1.png')
+boat_2 = Image.open('slovoletiki/самолет2.png')
+boat_3 = Image.open('slovoletiki/самолет3.png')
+boat_4 = Image.open('slovoletiki/самолет4.png')
 
 start_menu = types.ReplyKeyboardMarkup(row_width=1, resize_keyboard=True, one_time_keyboard=False)
 b1 = types.KeyboardButton(text='Ввести текст')
@@ -59,19 +59,19 @@ def word(word, id):
     for char in word:
         try:
             if char == '?':
-                img = Image.open('Буквы/q.png')
+                img = Image.open('slovoletiki/Буквы/q.png')
             elif char == ':':
-                img = Image.open('Буквы/colon.png')
+                img = Image.open('slovoletiki/Буквы/colon.png')
             elif char in '“«„"':
-                img = Image.open('Буквы/opencommas.png')
+                img = Image.open('slovoletiki/Буквы/opencommas.png')
             elif char in '”’»“"':
-                img = Image.open('Буквы/closecommas.png')
+                img = Image.open('slovoletiki/Буквы/closecommas.png')
             elif char == '-' or char == '–' or char == '—':
-                img = Image.open('Буквы/-.png')
+                img = Image.open('slovoletiki/Буквы/-.png')
             elif char == 'і' or char == 'i':
-                img = Image.open('Буквы/іі.png')
+                img = Image.open('slovoletiki/Буквы/іі.png')
             else:
-                img = Image.open('Буквы/' + char.upper() + '.png')
+                img = Image.open('slovoletiki/Буквы/' + char.upper() + '.png')
             width, height = img.size
         except:
             pass
@@ -330,17 +330,17 @@ def word_only(word, id):
     for char in word:
         try:
             if char == '?':
-                img = Image.open('Буквы/q.png')
+                img = Image.open('slovoletiki/Буквы/q.png')
             elif char == ':':
-                img = Image.open('Буквы/colon.png')
+                img = Image.open('slovoletiki/Буквы/colon.png')
             elif char == '"':
-                img = Image.open('Буквы/comas.png')
+                img = Image.open('slovoletiki/Буквы/comas.png')
             elif char == '-' or char == '–' or char == '—':
-                img = Image.open('Буквы/-.png')
+                img = Image.open('slovoletiki/Буквы/-.png')
             elif char == 'і' or char == 'i':
-                img = Image.open('Буквы/іі.png')
+                img = Image.open('slovoletiki/Буквы/іі.png')
             else:
-                img = Image.open('Буквы/' + char.upper() + '.png')
+                img = Image.open('slovoletiki/Буквы/' + char.upper() + '.png')
             width, height = img.size
         except:
             pass
@@ -568,17 +568,17 @@ def word_with_drops(word, id):
     for char in word:
         try:
             if char == '?':
-                img = Image.open('Буквы/q.png')
+                img = Image.open('slovoletiki/Буквы/q.png')
             elif char == ':':
-                img = Image.open('Буквы/colon.png')
+                img = Image.open('slovoletiki/Буквы/colon.png')
             elif char == '"':
-                img = Image.open('Буквы/comas.png')
+                img = Image.open('slovoletiki/Буквы/comas.png')
             elif char == '-' or char == '–' or char == '—':
-                img = Image.open('Буквы/-.png')
+                img = Image.open('slovoletiki/Буквы/-.png')
             elif char == 'і' or char == 'i':
-                img = Image.open('Буквы/іі.png')
+                img = Image.open('slovoletiki/Буквы/іі.png')
             else:
-                img = Image.open('Буквы/' + char.upper() + '.png')
+                img = Image.open('slovoletiki/Буквы/' + char.upper() + '.png')
             width, height = img.size
         except:
             pass
@@ -846,17 +846,17 @@ def word_with_boats(word, id):
     for char in word:
         try:
             if char == '?':
-                img = Image.open('Буквы/q.png')
+                img = Image.open('slovoletiki/Буквы/q.png')
             elif char == ':':
-                img = Image.open('Буквы/colon.png')
+                img = Image.open('slovoletiki/Буквы/colon.png')
             elif char == '"':
-                img = Image.open('Буквы/comas.png')
+                img = Image.open('slovoletiki/Буквы/comas.png')
             elif char == '-' or char == '–' or char == '—':
-                img = Image.open('Буквы/-.png')
+                img = Image.open('slovoletiki/Буквы/-.png')
             elif char == 'і' or char == 'i':
-                img = Image.open('Буквы/іі.png')
+                img = Image.open('slovoletiki/Буквы/іі.png')
             else:
-                img = Image.open('Буквы/' + char.upper() + '.png')
+                img = Image.open('slovoletiki/Буквы/' + char.upper() + '.png')
             width, height = img.size
         except:
             pass
@@ -1266,25 +1266,25 @@ def answer(message):
     bot.send_message(chat_id=message.chat.id, text="Выберите один из вариантов:")
     
     markup1 = types.InlineKeyboardMarkup(row_width=1).add(types.InlineKeyboardButton(text='✅', callback_data='1'))
-    img = Image.open("самолет1.png")
+    img = Image.open("slovoletiki/самолет1.png")
     bg = Image.new("RGBA", img.size, "white")
     bg.paste(img, img)
     bot.send_photo(chat_id=message.chat.id, photo=bg, reply_markup=markup1)
     
     markup2 = types.InlineKeyboardMarkup(row_width=1).add(types.InlineKeyboardButton(text='✅', callback_data='2'))
-    img = Image.open("самолет2.png")
+    img = Image.open("slovoletiki/самолет2.png")
     bg = Image.new("RGBA", img.size, "white")
     bg.paste(img, img)
     bot.send_photo(chat_id=message.chat.id, photo=bg, reply_markup=markup2)
     
     markup3 = types.InlineKeyboardMarkup(row_width=1).add(types.InlineKeyboardButton(text='✅', callback_data='3'))
-    img = Image.open("самолет3.png")
+    img = Image.open("slovoletiki/самолет3.png")
     bg = Image.new("RGBA", img.size, "white")
     bg.paste(img, img)
     bot.send_photo(chat_id=message.chat.id, photo=bg, reply_markup=markup3)
     
     markup4 = types.InlineKeyboardMarkup(row_width=1).add(types.InlineKeyboardButton(text='✅', callback_data='4'))
-    img = Image.open("самолет4.png")
+    img = Image.open("slovoletiki/самолет4.png")
     bg = Image.new("RGBA", img.size, "white")
     bg.paste(img, img)
     bot.send_photo(chat_id=message.chat.id, photo=bg, reply_markup=markup4)
@@ -1354,7 +1354,7 @@ def exit_func(query):
 @bot.callback_query_handler(lambda query: query.data == '1')
 def f(query):
     global start_menu
-    with open("preferences.txt", "r") as f:
+    with open("slovoletiki/preferences.txt", "r") as f:
         data = ast.literal_eval(f.read())
     try:
         data[str(query.message.chat.id)]['plane'] = '1'
@@ -1364,7 +1364,7 @@ def f(query):
             data[str(query.message.chat.id)] = {'word': w, 'plane': '1'}
         except:
             data[str(query.message.chat.id)] = {'word': '1', 'plane': '1'}
-    with open("preferences.txt", "w") as f:
+    with open("slovoletiki/preferences.txt", "w") as f:
         f.write(str(data))
     bot.send_message(chat_id=query.message.chat.id, text="Готово!", reply_markup=start_menu)
     
@@ -1372,7 +1372,7 @@ def f(query):
 @bot.callback_query_handler(lambda query: query.data == '2')
 def f(query):
     global start_menu
-    with open("preferences.txt", "r") as f:
+    with open("slovoletiki/preferences.txt", "r") as f:
         data = ast.literal_eval(f.read())
     try:
         data[str(query.message.chat.id)]['plane'] = '2'
@@ -1382,14 +1382,14 @@ def f(query):
             data[str(query.message.chat.id)] = {'word': w, 'plane': '2'}
         except:
             data[str(query.message.chat.id)] = {'word': '1', 'plane': '2'}
-    with open("preferences.txt", "w") as f:
+    with open("slovoletiki/preferences.txt", "w") as f:
         f.write(str(data))
     bot.send_message(chat_id=query.message.chat.id, text="Готово!", reply_markup=start_menu)
 
 @bot.callback_query_handler(lambda query: query.data == '3')
 def f(query):
     global start_menu
-    with open("preferences.txt", "r") as f:
+    with open("slovoletiki/preferences.txt", "r") as f:
         data = ast.literal_eval(f.read())
     try:
         data[str(query.message.chat.id)]['plane'] = '3'
@@ -1399,14 +1399,14 @@ def f(query):
             data[str(query.message.chat.id)] = {'word': w, 'plane': '3'}
         except:
             data[str(query.message.chat.id)] = {'word': '1', 'plane': '3'}
-    with open("preferences.txt", "w") as f:
+    with open("slovoletiki/preferences.txt", "w") as f:
         f.write(str(data))
     bot.send_message(chat_id=query.message.chat.id, text="Готово!", reply_markup=start_menu)
 
 @bot.callback_query_handler(lambda query: query.data == '4')
 def f(query):
     global start_menu
-    with open("preferences.txt", "r") as f:
+    with open("slovoletiki/preferences.txt", "r") as f:
         data = ast.literal_eval(f.read())
     try:
         data[str(query.message.chat.id)]['plane'] = '4'
@@ -1416,14 +1416,14 @@ def f(query):
             data[str(query.message.chat.id)] = {'word': w, 'plane': '4'}
         except:
             data[str(query.message.chat.id)] = {'word': '1', 'plane': '4'}
-    with open("preferences.txt", "w") as f:
+    with open("slovoletiki/preferences.txt", "w") as f:
         f.write(str(data))
     bot.send_message(chat_id=query.message.chat.id, text="Готово!", reply_markup=start_menu)
 
 @bot.callback_query_handler(lambda query: query.data == 'w1')
 def f(query):
     global start_menu
-    with open("preferences.txt", "r") as f:
+    with open("slovoletiki/preferences.txt", "r") as f:
         data = ast.literal_eval(f.read())
     try:
         data[str(query.message.chat.id)]['word'] = '1'
@@ -1433,14 +1433,14 @@ def f(query):
             data[str(query.message.chat.id)] = {'word': '1', 'plane': p}
         except:
             data[str(query.message.chat.id)] = {'word': '1', 'plane': '1'}
-    with open("preferences.txt", "w") as f:
+    with open("slovoletiki/preferences.txt", "w") as f:
         f.write(str(data))
     bot.send_message(chat_id=query.message.chat.id, text="Готово!", reply_markup=start_menu)
 
 @bot.callback_query_handler(lambda query: query.data == 'w2')
 def f(query):
     global start_menu
-    with open("preferences.txt", "r") as f:
+    with open("slovoletiki/preferences.txt", "r") as f:
         data = ast.literal_eval(f.read())
     try:
         data[str(query.message.chat.id)]['word'] = '2'
@@ -1450,14 +1450,14 @@ def f(query):
             data[str(query.message.chat.id)] = {'word': '2', 'plane': p}
         except:
             data[str(query.message.chat.id)] = {'word': '2', 'plane': '1'}
-    with open("preferences.txt", "w") as f:
+    with open("slovoletiki/preferences.txt", "w") as f:
         f.write(str(data))
     bot.send_message(chat_id=query.message.chat.id, text="Готово!", reply_markup=start_menu)
 
 @bot.callback_query_handler(lambda query: query.data == 'w3')
 def f(query):
     global start_menu
-    with open("preferences.txt", "r") as f:
+    with open("slovoletiki/preferences.txt", "r") as f:
         data = ast.literal_eval(f.read())
     try:
         data[str(query.message.chat.id)]['word'] = '3'
@@ -1467,14 +1467,14 @@ def f(query):
             data[str(query.message.chat.id)] = {'word': '3', 'plane': p}
         except:
             data[str(query.message.chat.id)] = {'word': '3', 'plane': '1'}
-    with open("preferences.txt", "w") as f:
+    with open("slovoletiki/preferences.txt", "w") as f:
         f.write(str(data))
     bot.send_message(chat_id=query.message.chat.id, text="Готово!", reply_markup=start_menu)
 
 @bot.callback_query_handler(lambda query: query.data == 'w4')
 def f(query):
     global start_menu
-    with open("preferences.txt", "r") as f:
+    with open("slovoletiki/preferences.txt", "r") as f:
         data = ast.literal_eval(f.read())
     try:
         data[str(query.message.chat.id)]['word'] = '4'
@@ -1484,7 +1484,7 @@ def f(query):
             data[str(query.message.chat.id)] = {'word': '4', 'plane': p}
         except:
             data[str(query.message.chat.id)] = {'word': '4', 'plane': '1'}
-    with open("preferences.txt", "w") as f:
+    with open("slovoletiki/preferences.txt", "w") as f:
         f.write(str(data))
     bot.send_message(chat_id=query.message.chat.id, text="Готово!", reply_markup=start_menu)
 
