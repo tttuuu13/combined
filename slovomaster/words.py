@@ -5,11 +5,11 @@ from admin import get_info
 
 a = ['а', 'е', 'ё', 'и', 'о', 'у', 'э', 'ю', 'я', 'ы', 'і', 'ї', 'є']
 b = ['б', 'в', 'г', 'д', 'ж', 'з', 'к', 'л', 'м', 'н', 'п', 'р', 'с', 'т', 'ф', 'х', 'ц', 'ч', 'ш', 'щ', 'й', 'ґ']
-s_drop = Image.open('звезда.png')
+s_drop = Image.open('slovomaster/звезда.png')
 s_drop = s_drop.resize((62, 62))
-b_drop = Image.open('звезда.png')
+b_drop = Image.open('slovomaster/звезда.png')
 b_drop = b_drop.resize((126, 126))
-boat_1 = Image.open('самолет1.png').convert("RGBA")
+boat_1 = Image.open('slovomaster/самолет1.png').convert("RGBA")
 
 def word(word, id):
     global boat_1
@@ -39,7 +39,7 @@ def word(word, id):
     for char in word:
         try:
             if char.lower() in excluded:
-                img = Image.open('Буквы/blank.png')
+                img = Image.open('slovomaster/Буквы/blank.png')
                 width, height = img.size
                 img = img.resize((blank, 120), Image.ANTIALIAS)
                 width, height = img.size
@@ -48,24 +48,24 @@ def word(word, id):
                 chars.append(img)
                 continue
             elif char == '?':
-                img = Image.open('Буквы/q.png')
+                img = Image.open('slovomaster/Буквы/q.png')
             elif char == ':':
-                img = Image.open('Буквы/colon.png')
+                img = Image.open('slovomaster/Буквы/colon.png')
             elif char in '“«„"':
-                img = Image.open('Буквы/opencommas.png')
+                img = Image.open('slovomaster/Буквы/opencommas.png')
             elif char in '”’»“"':
-                img = Image.open('Буквы/closecommas.png')
+                img = Image.open('slovomaster/Буквы/closecommas.png')
             elif char == '-' or char == '–' or char == '—':
-                img = Image.open('Буквы/-.png')
+                img = Image.open('slovomaster/Буквы/-.png')
             elif char == 'і' or char == 'i':
-                img = Image.open('Буквы/іі.png')
+                img = Image.open('slovomaster/Буквы/іі.png')
             elif char == '*':
-                img = Image.open("Буквы/'.png")
+                img = Image.open("slovomaster/Буквы/'.png")
             else:
                 if char == char.upper():
-                    img = Image.open('Буквы/' + char + '.png')
+                    img = Image.open('slovomaster/Буквы/' + char + '.png')
                 else:
-                    img = Image.open('Буквы/' + char * 2 + '.png')
+                    img = Image.open('slovomaster/Буквы/' + char * 2 + '.png')
             width, height = img.size
         except:
             pass
