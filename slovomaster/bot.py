@@ -457,7 +457,8 @@ def f(query):
     except:
         bot.send_message(chat_id=query.message.chat.id, text="Что-то не так с базой данных!", reply_markup=start_menu)
 
-
+bot.infinity_polling()
+"""
 
 @server.route('/' + '5514371847:AAHyXwFZWL4Ak_EEXFa6CigjYGQFqquaCqI', methods=['POST'])
 def getMessage():
@@ -474,3 +475,4 @@ def webhook():
 if __name__ == '__main__':
     server.debug = True
     server.run(host="0.0.0.0", port=int(os.environ.get('PORT', 5000)))
+"""
