@@ -202,7 +202,7 @@ def create_text(message):
         bot.send_message(chat_id=message.chat.id, text='Выберите ориентацию, нажимая на кнопки внизу', reply_markup=markup)
         bot.register_next_step_handler(message, ask_orientation)
         return
-    with open('preferences.txt', 'r') as prf:
+    with open('slovolodochki/preferences.txt', 'r') as prf:
         prfs = eval(prf.read())
     if str(message.chat.id) in prfs.keys():
         mode = prfs[str(message.chat.id)]
@@ -211,14 +211,14 @@ def create_text(message):
     try:
         msg = bot.send_message(chat_id=message.chat.id, text='Ожидайте, процесс может занять какое-то время🕒')
         photo, text2 = text(text1, size, orientation, mode)
-        photo.save('текст.png')
-        photo = open('текст.png', 'rb')
+        photo.save('slovolodochki/текст.png')
+        photo = open('slovolodochki/текст.png', 'rb')
         bot.send_document(chat_id=message.chat.id, document=photo, caption=text1[:10] + '...')
         while text2 != '':
             photo, text2 = text(text2, size, orientation, mode)
             print(text2)
-            photo.save('текст.png')
-            photo = open('текст.png', 'rb')
+            photo.save('slovolodochki/текст.png')
+            photo = open('slovolodochki/текст.png', 'rb')
             bot.send_document(chat_id=message.chat.id, document=photo, caption='Продолжение')
         bot.edit_message_text(text='Готово!', chat_id=message.chat.id, message_id=msg.id)
         bot.send_message(text='Возврат в меню...', chat_id=message.chat.id, reply_markup=start_menu)
@@ -243,9 +243,9 @@ def change_word(message):
     bot.register_next_step_handler(message, commit)
 def commit(message):
     if message.text in ['Обычный', 'Только буквы', 'Буквы и капельки', 'Буквы и лодочки']:
-        with open('preferences.txt', 'r') as prf:
+        with open('slovolodochki/preferences.txt', 'r') as prf:
             prfs = eval(prf.read())
-        with open('preferences.txt', 'w') as prf:
+        with open('slovolodochki/preferences.txt', 'w') as prf:
             prfs[str(message.chat.id)] = message.text
             prf.write(str(prfs))
         bot.send_message(message.chat.id, 'Готово!', reply_markup = types.ReplyKeyboardRemove())
@@ -275,7 +275,7 @@ def create_word(message):
         return
     try:
         for i in message.text.split():
-            with open('preferences.txt', 'r') as prf:
+            with open('slovolodochki/preferences.txt', 'r') as prf:
                 prfs = eval(prf.read())
             if str(message.chat.id) in prfs.keys():
                 mode = prfs[str(message.chat.id)]
@@ -290,11 +290,11 @@ def create_word(message):
             else:
                 photo, new_line = word_with_boats(i.lower(), False)
             #bot.send_photo(chat_id=message.chat.id, photo=photo)
-            photo.save(i + '.png')
-            photo = open(i + '.png', 'rb')
+            photo.save('slovolodochki/' + i + '.png')
+            photo = open('slovolodochki/' + i + '.png', 'rb')
             bot.send_document(chat_id=message.chat.id, document=photo)
             photo.close()
-            os.remove(i + '.png')
+            os.remove('slovolodochki/' + i + '.png')
     except:
         bot.send_message(chat_id=message.chat.id, text='Произошла ошибка, проверьте отсутствие знаков припинания и латинских букв, либо слово слишком длинное')
 
