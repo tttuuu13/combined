@@ -1488,6 +1488,7 @@ def f(query):
         f.write(str(data))
     bot.send_message(chat_id=query.message.chat.id, text="Готово!", reply_markup=start_menu)
 
+bot.delete_webhook()
 bot.infinity_polling()
 """
 @server.route('/' + '2126267694:AAGLg0fY8kw4oFYt5T0vSWKeM39MtV6kYV8', methods=['POST'])
