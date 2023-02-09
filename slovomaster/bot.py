@@ -457,6 +457,7 @@ def f(query):
     except:
         bot.send_message(chat_id=query.message.chat.id, text="Что-то не так с базой данных!", reply_markup=start_menu)
 
+bot.delete_webhook()
 bot.infinity_polling()
 """
 
