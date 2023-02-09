@@ -1498,7 +1498,7 @@ def getMessage():
 @server.route("/")
 def webhook():
     bot.remove_webhook()
-    bot.set_webhook(url='https://monkfish-app-m96aq.ondigitalocean.app/' + '2126267694:AAGLg0fY8kw4oFYt5T0vSWKeM39MtV6kYV8')
+    bot.set_webhook(url='https://coral-app-83lpo.ondigitalocean.app/' + '2126267694:AAGLg0fY8kw4oFYt5T0vSWKeM39MtV6kYV8')
     return "!", 200
 
 if __name__ == '__main__':
