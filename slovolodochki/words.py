@@ -4,11 +4,11 @@ import math
 
 a = ['а', 'е', 'ё', 'и', 'о', 'у', 'э', 'ю', 'я', 'ы']
 b = ['б', 'в', 'г', 'д', 'ж', 'з', 'к', 'л', 'м', 'н', 'п', 'р', 'с', 'т', 'ф', 'х', 'ц', 'ч', 'ш', 'щ', 'й']
-s_drop = Image.open('капля.png')
+s_drop = Image.open('slovolodochki/капля.png')
 s_drop = s_drop.resize((62, 97))
-b_drop = Image.open('капля.png')
+b_drop = Image.open('slovolodochki/капля.png')
 b_drop = b_drop.resize((126, 195))
-boat = Image.open('лодка.png')
+boat = Image.open('slovolodochki/лодка.png')
 boat = boat.resize((468, 128))
 
 
@@ -21,15 +21,15 @@ def word(word, is_text):
     for char in word:
         try:
             if char == '?':
-                img = Image.open('Буквы/q.png')
+                img = Image.open('slovolodochki/Буквы/q.png')
             elif char == ':':
-                img = Image.open('Буквы/colon.png')
+                img = Image.open('slovolodochki/Буквы/colon.png')
             elif char == '"':
-                img = Image.open('Буквы/comas.png')
+                img = Image.open('slovolodochki/Буквы/comas.png')
             elif char == '-' or char == '–' or char == '—':
-                img = Image.open('Буквы/--scale-4_00x.png')
+                img = Image.open('slovolodochki/Буквы/--scale-4_00x.png')
             else:
-                img = Image.open('Буквы/' + char.upper() + '-scale-4_00x.png')
+                img = Image.open('slovolodochki/Буквы/' + char.upper() + '-scale-4_00x.png')
             width, height = img.size
         except:
             pass
@@ -267,15 +267,15 @@ def word_with_drops(word, is_text):
     for char in word:
         try:
             if char == '?':
-                img = Image.open('Буквы/q.png')
+                img = Image.open('slovolodochki/Буквы/q.png')
             elif char == ':':
-                img = Image.open('Буквы/colon.png')
+                img = Image.open('slovolodochki/Буквы/colon.png')
             elif char == '"':
-                img = Image.open('Буквы/comas.png')
+                img = Image.open('slovolodochki/Буквы/comas.png')
             elif char == '-' or char == '–' or char == '—':
-                img = Image.open('Буквы/--scale-4_00x.png')
+                img = Image.open('slovolodochki/Буквы/--scale-4_00x.png')
             else:
-                img = Image.open('Буквы/' + char.upper() + '-scale-4_00x.png')
+                img = Image.open('slovolodochki/Буквы/' + char.upper() + '-scale-4_00x.png')
             width, height = img.size
         except:
             pass
@@ -510,15 +510,15 @@ def word_with_boats(word, is_text):
     for char in word:
         try:
             if char == '?':
-                img = Image.open('Буквы/q.png')
+                img = Image.open('slovolodochki/Буквы/q.png')
             elif char == ':':
-                img = Image.open('Буквы/colon.png')
+                img = Image.open('slovolodochki/Буквы/colon.png')
             elif char == '"':
-                img = Image.open('Буквы/comas.png')
+                img = Image.open('slovolodochki/Буквы/comas.png')
             elif char == '-' or char == '–' or char == '—':
-                img = Image.open('Буквы/--scale-4_00x.png')
+                img = Image.open('slovolodochki/Буквы/--scale-4_00x.png')
             else:
-                img = Image.open('Буквы/' + char.upper() + '-scale-4_00x.png')
+                img = Image.open('slovolodochki/Буквы/' + char.upper() + '-scale-4_00x.png')
             width, height = img.size
         except:
             pass
@@ -748,15 +748,15 @@ def word_only(word, is_text):
     for char in word:
         try:
             if char == '?':
-                img = Image.open('Буквы/q.png')
+                img = Image.open('slovolodochki/Буквы/q.png')
             elif char == ':':
-                img = Image.open('Буквы/colon.png')
+                img = Image.open('slovolodochki/Буквы/colon.png')
             elif char == '"':
-                img = Image.open('Буквы/comas.png')
+                img = Image.open('slovolodochki/Буквы/comas.png')
             elif char == '-' or char == '–' or char == '—':
-                img = Image.open('Буквы/--scale-4_00x.png')
+                img = Image.open('slovolodochki/Буквы/--scale-4_00x.png')
             else:
-                img = Image.open('Буквы/' + char.upper() + '-scale-4_00x.png')
+                img = Image.open('slovolodochki/Буквы/' + char.upper() + '-scale-4_00x.png')
             width, height = img.size
         except:
             pass
