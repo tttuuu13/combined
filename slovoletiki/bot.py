@@ -43,7 +43,7 @@ def word(word, id):
     new_line = False
     
     try:
-        with open("preferences.txt", "r") as f:
+        with open("slovolodochki/preferences.txt", "r") as f:
             s = ast.literal_eval(f.read())[id]['plane']
         if s == '1':
             boat = boat_1
@@ -828,7 +828,7 @@ def word_with_boats(word, id):
     chars = []
     new_line = False
     
-    with open("preferences.txt", "r") as f:
+    with open("slovolodochki/preferences.txt", "r") as f:
         data = ast.literal_eval(f.read())
     try:
         s = data[id]['plane']
@@ -1113,7 +1113,7 @@ def g_text(text1, size, orientation, id):
             break
         
         try:
-            with open('preferences.txt', 'r') as f:
+            with open('slovolodochki/preferences.txt', 'r') as f:
                 w_type = ast.literal_eval(f.read())[str(id)]['word']
             
             if w_type == '1':
@@ -1237,14 +1237,14 @@ def create_text(message):
         msg = bot.send_message(chat_id=message.chat.id, text='Ожидайте, процесс может занять какое-то время🕒')
         text, size, orientation = text_queue[str(message.chat.id)]
         photo, text2 = g_text(text, size, orientation, message.chat.id)
-        photo.save(text[:6] + '.png')
-        photo = open(text[:6] + '.png', 'rb')
+        photo.save('slovolodochki/' + text[:6] + '.png')
+        photo = open('slovolodochki/' + text[:6] + '.png', 'rb')
         bot.send_document(chat_id=message.chat.id, data=photo, caption=text[:10] + '...')
         while text2 != '':
             photo, text2 = g_text(text2, size, orientation, mode)
             print(text2)
-            photo.save(text[:6] + '.png')
-            photo = open(text[:6] + '.png', 'rb')
+            photo.save('slovolodochki/' + text[:6] + '.png')
+            photo = open('slovolodochki/' + text[:6] + '.png', 'rb')
             bot.send_document(chat_id=message.chat.id, data=photo, caption='Продолжение')
         bot.edit_message_text(text='Готово!', chat_id=message.chat.id, message_id=msg.id)
         bot.send_message(text='Возврат в меню...', chat_id=message.chat.id, reply_markup=start_menu)
@@ -1254,7 +1254,7 @@ def create_text(message):
         bot.send_message(text='Возврат в меню...', chat_id=message.chat.id, reply_markup=start_menu)
     #bot.send_message(chat_id=599040955, text=str(text_queue))
     photo.close()
-    os.remove(text[:6] + '.png')
+    os.remove('slovolodochki/' + text[:6] + '.png')
     del text_queue[str(message.chat.id)]
 
 @bot.message_handler(func=lambda m: m.text == 'Ввести текст')
@@ -1301,7 +1301,7 @@ def ans(message):
 @bot.message_handler(func=lambda m: True, content_types=['text'])
 def create_word(message):
     try:
-        with open('preferences.txt', 'r') as f:
+        with open('slovoletiki/preferences.txt', 'r') as f:
             w_type = ast.literal_eval(f.read())[str(message.chat.id)]['word']
         for i in message.text.split():
             if w_type == '1':
@@ -1318,11 +1318,11 @@ def create_word(message):
                 pass
             else:
                 i = 'pic'
-            photo.save(i + '.png')
-            photo = open(i + '.png', 'rb')
+            photo.save('slovoletiki/' + i + '.png')
+            photo = open('slovoletiki/' + i + '.png', 'rb')
             bot.send_document(chat_id=message.chat.id, data=photo, caption=i)
             photo.close()
-            os.remove(i + '.png')
+            os.remove('slovoletiki/' + i + '.png')
             #bot.send_message(chat_id=599040955, text=i)
     except:
         try:
@@ -1332,11 +1332,11 @@ def create_word(message):
                     pass
                 else:
                     i = 'poop'
-                photo.save(i + '.png')
-                photo = open(i + '.png', 'rb')
+                photo.save('slovoletiki/' + i + '.png')
+                photo = open('slovoletiki/' + i + '.png', 'rb')
                 bot.send_document(chat_id=message.chat.id, data=photo, caption=i)
                 photo.close()
-                os.remove(i + '.png')
+                os.remove('slovoletiki/' + i + '.png')
                 #bot.send_message(chat_id=599040955, text=i)
         except:
             bot.send_message(chat_id=message.chat.id, text='Произошла ошибка, проверьте отсутствие недопустимых знаков')
@@ -1488,7 +1488,8 @@ def f(query):
         f.write(str(data))
     bot.send_message(chat_id=query.message.chat.id, text="Готово!", reply_markup=start_menu)
 
-
+bot.infinity_polling()
+"""
 @server.route('/' + '2126267694:AAGLg0fY8kw4oFYt5T0vSWKeM39MtV6kYV8', methods=['POST'])
 def getMessage():
     bot.process_new_updates([telebot.types.Update.de_json(request.stream.read().decode("utf-8"))])
@@ -1504,3 +1505,4 @@ def webhook():
 if __name__ == '__main__':
     server.debug = True
     server.run(host="0.0.0.0", port=int(os.environ.get('PORT', 4444)))
+"""
