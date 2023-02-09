@@ -1,1 +1,1 @@
-web: python3 slovolodochki/bot.py & web: pyhton3 slovoletiki/bot.py
+web: python3 start.py
