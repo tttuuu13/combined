@@ -305,7 +305,7 @@ def exit_func(query):
     exit = True
     return
 
-bot.remove_webhook()
+bot.delete_webhook()
 bot.infinity_polling()
 
 """
